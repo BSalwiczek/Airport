@@ -18,7 +18,7 @@ public class AirplaneService {
     }
 
     public Optional<Airplane> find(Long serialNumber) {
-        return repository.find(serialNumber);
+        return repository.findBySerialNumber(serialNumber);
     }
 
     public List<Airplane> findAll() {
@@ -26,11 +26,11 @@ public class AirplaneService {
     }
 
     public void create(Airplane airplane) {
-        repository.create(airplane);
+        repository.save(airplane);
     }
 
     public void update(Airplane airplane) {
-        repository.update(airplane);
+        repository.save(airplane);
     }
 
     public void delete(Airplane airplane) {

@@ -1,5 +1,6 @@
 package bartosz.salwiczek.lotnisko.plane.service;
 
+import bartosz.salwiczek.lotnisko.plane.entity.Airplane;
 import bartosz.salwiczek.lotnisko.plane.entity.AirplaneModel;
 import bartosz.salwiczek.lotnisko.plane.repository.AirplaneModelRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,18 +19,22 @@ public class AirplaneModelService {
     }
 
     public Optional<AirplaneModel> find(String name) {
-        return repository.find(name);
+        return repository.findByName(name);
     }
 
     public List<AirplaneModel> findAll() {
         return repository.findAll();
     }
 
-    public void create(AirplaneModel airplane) {
-        repository.create(airplane);
+    public void create(AirplaneModel airplaneModel) {
+        repository.save(airplaneModel);
     }
 
-    public void delete(AirplaneModel airplane) {
-        repository.delete(airplane);
+    public void update(AirplaneModel airplaneModel) {
+        repository.save(airplaneModel);
+    }
+
+    public void delete(AirplaneModel airplaneModel) {
+        repository.delete(airplaneModel);
     }
 }
