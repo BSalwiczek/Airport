@@ -11,7 +11,7 @@ import java.util.function.Function;
 @Setter
 @Builder
 public class GetAirplaneResponse {
-    private Long serialNumber;
+    private Long id;
 
     private int mileage;
 
@@ -19,7 +19,7 @@ public class GetAirplaneResponse {
 
     public static Function<Airplane, GetAirplaneResponse> entityToDtoMapper() {
         return airplane -> GetAirplaneResponse.builder()
-                .serialNumber(airplane.getSerialNumber())
+                .id(airplane.getId())
                 .mileage(airplane.getMileage())
                 .airplaneModel(airplane.getAirplaneModel().getName())
                 .build();

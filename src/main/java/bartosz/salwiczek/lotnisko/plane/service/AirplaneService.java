@@ -17,8 +17,8 @@ public class AirplaneService {
         this.repository = repository;
     }
 
-    public Optional<Airplane> find(Long serialNumber) {
-        return repository.findBySerialNumber(serialNumber);
+    public Optional<Airplane> find(Long Id) {
+        return repository.findById(Id);
     }
 
     public List<Airplane> findAll() {

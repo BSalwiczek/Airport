@@ -1,6 +1,7 @@
 package bartosz.salwiczek.lotnisko.plane.entity;
 
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
 
@@ -8,20 +9,21 @@ import javax.persistence.*;
 
 @Getter
 @Setter
-@ToString
-@Builder
+@SuperBuilder
 @NoArgsConstructor
-@AllArgsConstructor
-@EqualsAndHashCode
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
+@EqualsAndHashCode()
+@ToString(callSuper = true)
 @Entity
 @Table(name="airplanes")
 public class Airplane implements Serializable {
-    @Id
-    private Long serialNumber;
+    @Id @GeneratedValue
+    private Long id;
 
+    @Column
     private Integer mileage;
 
     @ManyToOne
-    @JoinColumn(name="airplane_models")
+    @JoinColumn(name="airplane_model")
     private AirplaneModel airplaneModel;
 }

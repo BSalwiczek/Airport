@@ -9,7 +9,7 @@ import java.util.Optional;
 
 @Repository
 public interface AirplaneRepository extends JpaRepository<Airplane, Long> {
-    Optional<Airplane> findBySerialNumber(Long serialNumber);
+    Optional<Airplane> findById(Long Id);
 
     List<Airplane> findAll();
 

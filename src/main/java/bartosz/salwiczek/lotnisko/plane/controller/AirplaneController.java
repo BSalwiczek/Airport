@@ -32,9 +32,9 @@ public class AirplaneController {
                 .filter((airplane -> airplane.getAirplaneModel().getName().equals(airplaneModel))).toList()));
     }
 
-    @GetMapping("{serialNumber}")
-    public ResponseEntity<GetAirplaneResponse> getAirplane(@PathVariable("serialNumber") long serialNumber, @PathVariable("modelName") String modelName) {
-        Optional<Airplane> airplaneOptional = airplaneService.find(serialNumber);
+    @GetMapping("{id}")
+    public ResponseEntity<GetAirplaneResponse> getAirplane(@PathVariable("id") long id, @PathVariable("modelName") String modelName) {
+        Optional<Airplane> airplaneOptional = airplaneService.find(id);
         if(airplaneOptional.isEmpty()) {
             return ResponseEntity.notFound().build();
         }
@@ -49,22 +49,19 @@ public class AirplaneController {
         if(!request.getAirplaneModel().equals(modelName)) {
             return ResponseEntity.badRequest().build();
         }
-        if(airplaneService.find(request.getSerialNumber()).isPresent()) {
-            return ResponseEntity.badRequest().build();
-        }
 
         Airplane airplane = CreateAirplaneRequest.dtoToEntityMapper(name -> airplaneModelService.find(name).orElseThrow()).apply(request);
         airplaneService.create(airplane);
 
         return ResponseEntity
-                .created(builder.pathSegment("api", "airplane", "{serialNumber}").buildAndExpand(airplane.getSerialNumber()).toUri())
+                .created(builder.pathSegment("api", "airplane", "{id}").buildAndExpand(airplane.getId()).toUri())
                 .build();
 
     }
 
-    @PutMapping("{serialNumber}")
-    public ResponseEntity<Void> updateAirplaneRequest(@RequestBody UpdateAirplaneRequest request, @PathVariable("serialNumber") Long serialNumber, @PathVariable String modelName) {
-        Optional<Airplane> airplane = airplaneService.find(serialNumber);
+    @PutMapping("{id}")
+    public ResponseEntity<Void> updateAirplaneRequest(@RequestBody UpdateAirplaneRequest request, @PathVariable("id") Long id, @PathVariable String modelName) {
+        Optional<Airplane> airplane = airplaneService.find(id);
         if (airplane.isPresent()) {
             if(!airplane.get().getAirplaneModel().getName().equals(modelName)) {
                 return ResponseEntity.notFound().build();
@@ -79,9 +76,9 @@ public class AirplaneController {
 
 
 
-    @DeleteMapping("{serialNumber}")
-    public ResponseEntity<Void> deleteAirplaneRequest(@PathVariable("serialNumber") Long serialNumber, @PathVariable String modelName) {
-        Optional<Airplane> airplane = airplaneService.find(serialNumber);
+    @DeleteMapping("{id}")
+    public ResponseEntity<Void> deleteAirplaneRequest(@PathVariable("id") Long id, @PathVariable String modelName) {
+        Optional<Airplane> airplane = airplaneService.find(id);
         if (airplane.isPresent()) {
             airplaneService.delete(airplane.get());
             return ResponseEntity.noContent().build();

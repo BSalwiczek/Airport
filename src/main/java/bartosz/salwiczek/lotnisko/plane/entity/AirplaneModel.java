@@ -19,13 +19,16 @@ public class AirplaneModel implements Serializable {
     @Id
     private String name;
 
+    @Column
     private Integer numberOfSeats;
 
+    @Column
     private Integer fuelCapacity;
 
+    @Column
     private Integer maxWeight;
 
-    @OneToMany
-    @JoinColumn(name="airplanes")
+    @OneToMany(cascade=CascadeType.ALL, mappedBy = "airplaneModel", fetch=FetchType.LAZY)
+//    @JoinColumn(name="airplanes")
     private List<Airplane> airplanes;
 }

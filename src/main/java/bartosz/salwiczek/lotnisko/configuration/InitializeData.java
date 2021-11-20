@@ -32,9 +32,9 @@ public class InitializeData {
         airplaneModelService.create(boeing747);
         airplaneModelService.create(airbusA320);
 
-        Airplane a1 = Airplane.builder().serialNumber(1L).airplaneModel(boeing737).mileage(10000).build();
-        Airplane a2 = Airplane.builder().serialNumber(2L).airplaneModel(boeing747).mileage(12312).build();
-        Airplane a3 = Airplane.builder().serialNumber(3L).airplaneModel(airbusA320).mileage(42233).build();
+        Airplane a1 = Airplane.builder().id(1L).airplaneModel(boeing737).mileage(10000).build();
+        Airplane a2 = Airplane.builder().id(2L).airplaneModel(boeing747).mileage(12312).build();
+        Airplane a3 = Airplane.builder().id(3L).airplaneModel(airbusA320).mileage(42233).build();
 
         airplaneService.create(a1);
         airplaneService.create(a2);

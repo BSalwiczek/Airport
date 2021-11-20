@@ -10,8 +10,6 @@ import java.util.function.Function;
 @Getter
 @Setter
 public class CreateAirplaneRequest {
-    private Long serialNumber;
-
     private int mileage;
 
     private String airplaneModel;
@@ -21,7 +19,6 @@ public class CreateAirplaneRequest {
     ) {
         return request -> Airplane.builder()
                 .mileage(request.getMileage())
-                .serialNumber(request.getSerialNumber())
                 .airplaneModel(airplaneModelFunction.apply(request.getAirplaneModel()))
                 .build();
     }
