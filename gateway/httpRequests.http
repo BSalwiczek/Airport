@@ -1,0 +1,105 @@
+###
+GET http://localhost:8080/api/models
+
+<> 2021-11-08T163801.200.json
+<> 2021-11-08T163722.200.json
+<> 2021-11-08T163711.200.json
+<> 2021-11-08T163657.200.json
+<> 2021-11-08T155917.200.json
+<> 2021-11-08T153419.200.json
+<> 2021-11-08T152208.200.json
+<> 2021-11-08T152143.200.json
+<> 2021-11-08T152130.200.json
+<> 2021-11-08T080856.200.json
+<> 2021-11-08T080837.200.json
+<> 2021-11-08T080830.200.json
+
+###
+POST http://localhost:8080/api/models
+Content-Type: application/json
+
+{
+  "name": "Boeing767",
+  "numberOfSeats": 120,
+  "fuelCapacity": 1000,
+  "maxWeight": 1000
+}
+
+<> 2021-11-08T163816.405.json
+
+###
+PUT http://localhost:8080/api/models/Boeing767
+Content-Type: application/json
+
+{
+  "numberOfSeats": 2120,
+  "fuelCapacity": 21000,
+  "maxWeight": 2000
+}
+
+###
+GET http://localhost:8080/api/models/Boeing747
+
+<> 2021-11-08T152153.200.json
+<> 2021-11-08T080844.200.json
+
+###
+DELETE http://localhost:8080/api/models/Boeing767
+
+<> 2021-11-08T152326.500.json
+<> 2021-11-08T152239.500.json
+<> 2021-11-08T152219.500.json
+
+
+#-------------------------------------------------------------------------------------------------------------
+
+
+###
+GET http://localhost:8080/api/models/Boeing767/airplanes
+
+<> 2021-11-08T080801.200.json
+<> 2021-11-08T080745.200.json
+<> 2021-11-08T080739.200.json
+<> 2021-11-08T080026.200.json
+
+###
+GET http://localhost:8080/api/models/Boeing747/airplanes/2
+
+<> 2021-11-08T080821.200.json
+
+###
+POST http://localhost:8080/api/models/Boeing767/airplanes
+Content-Type: application/json
+
+{
+  "mileage": 999,
+  "productionYear": 2000,
+  "airplaneModel": "Boeing767"
+}
+
+<> 2021-11-08T080033.500.json
+
+###
+GET http://localhost:8080/api/models/Boeing767/airplanes/4
+
+<> 2021-11-04T232741.200.json
+<> 2021-11-04T220954.200.json
+
+###
+PUT http://localhost:8080/api/models/Boeing747/airplanes/2
+Content-Type: application/json
+
+{
+  "mileage": 1999,
+  "productionYear": "2010"
+}
+
+
+<> 2021-11-04T232536.400.json
+<> 2021-11-04T232258.400.json
+<> 2021-11-04T232123.400.json
+<> 2021-11-04T232114.400.json
+<> 2021-11-04T232106.400.html
+
+###
+DELETE http://localhost:8080/api/models/Boeing747/airplanes/5
