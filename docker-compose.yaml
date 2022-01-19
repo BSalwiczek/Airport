@@ -1,0 +1,29 @@
+version: '3.4'
+services:
+  m1:
+    build:
+      context: M1
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "80:80"
+      - "8080:8080"
+    networks:
+      - internal-network
+
+  m2:
+    build:
+      context: M2
+      dockerfile: Dockerfile
+    restart: always
+    hostname: m2
+    depends_on:
+      - m1
+    volumes:
+      - ./frontend:/var/www/html/frontend
+    networks:
+      - internal-network
+
+
+networks:
+  internal-network:

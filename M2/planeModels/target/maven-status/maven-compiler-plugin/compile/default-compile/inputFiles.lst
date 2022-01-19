@@ -1,0 +1,12 @@
+/home/bs/Desktop/AUI/planeModels/src/main/java/bartosz/salwiczek/planeModels/event/dto/CreateAirplaneModelRestRequest.java
+/home/bs/Desktop/AUI/planeModels/src/main/java/bartosz/salwiczek/planeModels/dto/UpdateAirplaneModelRequest.java
+/home/bs/Desktop/AUI/planeModels/src/main/java/bartosz/salwiczek/planeModels/entity/AirplaneModel.java
+/home/bs/Desktop/AUI/planeModels/src/main/java/bartosz/salwiczek/planeModels/dto/CreateAirplaneModelRequest.java
+/home/bs/Desktop/AUI/planeModels/src/main/java/bartosz/salwiczek/planeModels/controller/AirplaneModelController.java
+/home/bs/Desktop/AUI/planeModels/src/main/java/bartosz/salwiczek/planeModels/PlaneModelsApplication.java
+/home/bs/Desktop/AUI/planeModels/src/main/java/bartosz/salwiczek/planeModels/configuration/InitializeData.java
+/home/bs/Desktop/AUI/planeModels/src/main/java/bartosz/salwiczek/planeModels/dto/GetAirplaneModelsResponse.java
+/home/bs/Desktop/AUI/planeModels/src/main/java/bartosz/salwiczek/planeModels/service/AirplaneModelService.java
+/home/bs/Desktop/AUI/planeModels/src/main/java/bartosz/salwiczek/planeModels/dto/GetAirplaneModelResponse.java
+/home/bs/Desktop/AUI/planeModels/src/main/java/bartosz/salwiczek/planeModels/repository/AirplaneModelRepository.java
+/home/bs/Desktop/AUI/planeModels/src/main/java/bartosz/salwiczek/planeModels/event/repository/AirplaneModelsEventRepository.java
